@@ -72,3 +72,12 @@
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.pdb
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.genruntimeconfig.cache
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/ref/shoppro.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/DotNetEnv.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Microsoft.Extensions.Configuration.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Npgsql.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Sprache.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.sourcelink.json
