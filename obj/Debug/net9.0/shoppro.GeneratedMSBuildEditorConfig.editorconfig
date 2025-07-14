@@ -34,3 +34,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/gunin/Desktop/Project/Desktop Software/shoppro/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/gunin/Desktop/Project/Desktop Software/shoppro/Views/ProductView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

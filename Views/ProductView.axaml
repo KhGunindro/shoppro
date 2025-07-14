@@ -1,0 +1,150 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:shoppro.ViewModels"
+  x:Class="shoppro.Views.ProductView"
+  x:DataType="vm:ProductViewModel"
+  Background="#1a1a1a">
+  
+  <UserControl.DataContext>
+    <vm:ProductViewModel />
+  </UserControl.DataContext>
+  
+  <UserControl.Styles>
+    <!-- DataGrid Styles -->
+    <Style Selector="DataGrid">
+      <Setter Property="Background" Value="#2d2d2d"/>
+      <Setter Property="BorderBrush" Value="#404040"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="GridLinesVisibility" Value="All"/>
+      <Setter Property="HeadersVisibility" Value="All"/>
+      <Setter Property="RowBackground" Value="#3d3d3d"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="CanUserReorderColumns" Value="True"/>
+      <Setter Property="CanUserResizeColumns" Value="True"/>
+      <Setter Property="CanUserSortColumns" Value="True"/>
+    </Style>
+    
+    <Style Selector="DataGridColumnHeader">
+      <Setter Property="Background" Value="#404040"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="BorderBrush" Value="#555555"/>
+      <Setter Property="BorderThickness" Value="0,0,1,1"/>
+      <Setter Property="Padding" Value="8,4"/>
+    </Style>
+    
+    <Style Selector="DataGridCell">
+      <Setter Property="BorderBrush" Value="#555555"/>
+      <Setter Property="BorderThickness" Value="0,0,1,0"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Padding" Value="8,4"/>
+    </Style>
+    
+    <Style Selector="DataGridCell TextBlock">
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <Style Selector="DataGridRow:selected DataGridCell">
+      <Setter Property="Background" Value="#0078d4"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <Style Selector="DataGridRow:selected DataGridCell TextBlock">
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <Style Selector="DataGridRow:pointerover DataGridCell">
+      <Setter Property="Background" Value="#404040"/>
+    </Style>
+    
+    <Style Selector="DataGridRow:pointerover DataGridCell TextBlock">
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+  </UserControl.Styles>
+  
+  <Grid Margin="20">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    
+    <!-- Header Section -->
+    <Border Grid.Row="0" 
+            Background="#333333" 
+            CornerRadius="8" 
+            Padding="16,12" 
+            Margin="0,0,0,16">
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Text="📦" 
+                   FontSize="24" 
+                   VerticalAlignment="Center" 
+                   Margin="0,0,10,0"/>
+        <TextBlock Text="Product Inventory" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Foreground="White" 
+                   VerticalAlignment="Center"/>
+      </StackPanel>
+    </Border>
+    
+    <!-- DataGrid Section -->
+    <Border Grid.Row="1" 
+            Background="#2d2d2d" 
+            CornerRadius="8" 
+            Padding="2">
+      <DataGrid Name="ProductDataGrid"
+                ItemsSource="{Binding Products}"
+                AutoGenerateColumns="True"
+                IsReadOnly="True"
+                SelectionMode="Single"
+                Background="#2d2d2d"
+                Foreground="White"
+                FontSize="13"
+                GridLinesVisibility="All"
+                HeadersVisibility="All"
+                RowBackground="#3d3d3d"
+                BorderBrush="#404040"
+                BorderThickness="1">
+      </DataGrid>
+    </Border>
+    
+    <!-- Footer Section -->
+    <Border Grid.Row="2" 
+            Background="#333333" 
+            CornerRadius="8" 
+            Padding="16,8" 
+            Margin="0,16,0,0">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Column="0"
+                   Text="{Binding Products.Count, StringFormat='Total Products: {0} items'}"
+                   Foreground="#B0B0B0"
+                   FontSize="14"
+                   VerticalAlignment="Center"/>
+        
+        <StackPanel Grid.Column="1" 
+                    Orientation="Horizontal" 
+                    Spacing="16">
+          <TextBlock Text="📊 Inventory Status"
+                     Foreground="#90EE90"
+                     FontSize="12"
+                     VerticalAlignment="Center"/>
+          <TextBlock Text="🔄 Last Updated: Now"
+                     Foreground="#B0B0B0"
+                     FontSize="12"
+                     VerticalAlignment="Center"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>
