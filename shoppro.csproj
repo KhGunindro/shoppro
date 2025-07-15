@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Add other XAML files as needed -->
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.2" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.2" />
     <PackageReference Include="Avalonia.Desktop" Version="11.3.2" />

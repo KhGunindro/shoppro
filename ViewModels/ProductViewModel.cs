@@ -1,11 +1,10 @@
-using ReactiveUI;
 using shoppro.Models;
 using shoppro.Services;
 using System.Collections.ObjectModel;
 
 namespace shoppro.ViewModels;
 
-public partial class ProductViewModel : ReactiveObject
+public partial class ProductViewModel : ViewModelBase 
 {
     private readonly ProductService _productService = new();
 

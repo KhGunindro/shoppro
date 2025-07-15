@@ -1,41 +1,53 @@
 ﻿using System;
-using ReactiveUI;
-using System.Reactive;
 using Avalonia.Controls;
 using shoppro.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Collections.ObjectModel;
 
 namespace shoppro.ViewModels;
 
-public partial class MainWindowViewModel : ReactiveObject
+public partial class MainWindowViewModel : ObservableObject
 {
-    public string Greeting { get; } = "Welcome to shoppro!";
+    [ObservableProperty]
+    private bool _isPaneOpen = true;
 
-    public string DBStatus { get; set; }
-    public string Description { get; } = "Your one-stop solution for managing your shop efficiently.";
-
-    public MainWindowViewModel()
+    [RelayCommand]
+    private void TriggerPane()
     {
-        try
+        IsPaneOpen = !IsPaneOpen;
+    }
+
+    [ObservableProperty]
+    private ListItemTemplate? _selectedListItem;
+
+    partial void OnSelectedListItemChanged(ListItemTemplate? value)
+    {
+        if (value?.ModelType != null &&
+            Activator.CreateInstance(value.ModelType) is ViewModelBase vm)
         {
-            var db = new Services.DatabaseService();
-            using var connection = db.GetConnection();
-            DBStatus = "Database connection successful!";
-            connection.Close();
-        }
-        catch (Exception ex)
-        {
-            DBStatus = $"Database connection failed: {ex.Message}";
+            CurrentPage = vm;
         }
     }
-    private Control? _currentView;
-    public Control? CurrentView
+    public ObservableCollection<ListItemTemplate> Items { get; } = new()
     {
-        get => _currentView;
-        set => this.RaiseAndSetIfChanged(ref _currentView, value);
-    }
+        new ListItemTemplate(typeof(DashboardViewModel)),
+        new ListItemTemplate(typeof(ProductViewModel)),
+    };
 
-    public void NavigateToProducts()
+    [ObservableProperty]
+    private ViewModelBase? _currentPage = new DashboardViewModel();
+
+}
+
+public class ListItemTemplate
+{
+    public ListItemTemplate(Type type)
     {
-        CurrentView = new ProductView(); // You must have ProductView defined
+        ModelType = type;
+        Label = type.Name.Replace("ViewModel", string.Empty);
     }
+    public string? Label { get; }
+    public Type? ModelType { get; }
 }

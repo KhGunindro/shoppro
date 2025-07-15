@@ -12,13 +12,5 @@ namespace shoppro.Views
             InitializeComponent();
             DataContext = new MainWindowViewModel(); // or use DI if you have it
         }
-
-        private void OnGoToProducts(object? sender, RoutedEventArgs e)
-        {
-            if (DataContext is MainWindowViewModel vm)
-            {
-                vm.NavigateToProducts();
-            }
-        }
     }
 }

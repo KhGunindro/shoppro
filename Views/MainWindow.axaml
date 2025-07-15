@@ -14,14 +14,51 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Text="{Binding Greeting}" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-        <TextBlock Text="{Binding Description}" FontSize="16" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-        <TextBlock Text="{Binding DBStatus}" FontSize="14" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-         <!-- Navigation Button -->
-        <Button Content="Go to Products" Click="OnGoToProducts" Width="150" Margin="0,20,0,0"/>
+    <SplitView IsPaneOpen="{Binding IsPaneOpen}"
+            OpenPaneLength="300"
+            CompactPaneLength="50"
+            DisplayMode="CompactInline"
+            PaneBackground="#DFF2EB"
+            Background="#DFF2EB"
+            Foreground="black">
+        <SplitView.Pane>
+            <StackPanel Spacing="5">
+                <TextBlock 
+                HorizontalAlignment="Center">
+                    Shoppro
+                </TextBlock>
+                <Button Command="{Binding TriggerPaneCommand}">
+                    <PathIcon Data="{StaticResource arrow_expand_regular}" 
+                              Width="20" Height="20" 
+                              Background="#4A628A"
+                              Padding="5"
+                              CornerRadius="8"
+                              Foreground="black"/>
+                </Button>
+                <ListBox ItemsSource="{Binding Items}"
+                         SelectedItem="{Binding SelectedListItem}"
+                         Margin="5"
+                         Background="Transparent"
+                         Foreground="black">
 
-        <!-- Main Content Area -->
-        <ContentControl Content="{Binding CurrentView}" Margin="0,20,0,0"/>
-    </StackPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:ListItemTemplate}">
+                        <Border Margin="5" CornerRadius="8" Background="#7AB2D3" Padding="12">
+                        <StackPanel Spacing="2" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Label}" 
+                                           FontWeight="Bold" 
+                                           FontSize="16"/>
+                        </StackPanel>
+                        </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Border CornerRadius="12 0 0 12" Background="#B9E5E8" Padding="10">
+                <TransitioningContentControl Content="{Binding CurrentPage}"/>
+            </Border>
+        </SplitView.Content>
+    </SplitView>
 </Window>

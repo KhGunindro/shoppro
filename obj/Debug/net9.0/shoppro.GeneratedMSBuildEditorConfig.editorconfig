@@ -32,6 +32,12 @@ build_property.EnableCodeStyleSeverity =
 [/home/gunin/Desktop/Project/Desktop Software/shoppro/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/gunin/Desktop/Project/Desktop Software/shoppro/Assets/icons.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/gunin/Desktop/Project/Desktop Software/shoppro/Views/DashboardView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/gunin/Desktop/Project/Desktop Software/shoppro/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
