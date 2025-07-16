@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using shoppro.ViewModels;
+using System.Threading.Tasks; // Required for Task
 
 namespace shoppro.Views
 {
@@ -18,10 +19,22 @@ namespace shoppro.Views
             AvaloniaXamlLoader.Load(this);
         }
 
-        private void OnRefreshClicked(object sender, RoutedEventArgs e)
+        // The initial data load is handled by the ViewModel's constructor (synchronously on UI thread).
+        // So, OnAttachedToVisualTree no longer needs to trigger an initial load.
+        // protected override void OnAttachedToVisualTree(Avalonia.VisualTreeAttachmentEventArgs e)
+        // {
+        //     base.OnAttachedToVisualTree(e);
+        // }
+
+        // This event handler is for explicit user actions, like a "Refresh" button.
+        private async void OnRefreshClicked(object sender, RoutedEventArgs e)
         {
             if (DataContext is ProductViewModel vm)
-                vm.LoadProducts();
+            {
+                // This uses the async version of LoadProducts, which fetches data
+                // on a background thread and marshals collection updates to the UI thread.
+                await vm.LoadProductsAsync();
+            }
         }
     }
 }

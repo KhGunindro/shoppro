@@ -4,143 +4,237 @@
   xmlns:vm="clr-namespace:shoppro.ViewModels"
   x:Class="shoppro.Views.ProductView"
   x:DataType="vm:ProductViewModel"
-  Background="#1a1a1a">
-  
+  Background="#f5f5f7">
+
   <UserControl.DataContext>
     <vm:ProductViewModel />
   </UserControl.DataContext>
-  
+
   <UserControl.Styles>
-    <!-- DataGrid Styles -->
     <Style Selector="DataGrid">
-      <Setter Property="Background" Value="#2d2d2d"/>
-      <Setter Property="BorderBrush" Value="#404040"/>
+      <Setter Property="Background" Value="White"/>
+      <Setter Property="BorderBrush" Value="#e0e0e0"/>
       <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="GridLinesVisibility" Value="All"/>
-      <Setter Property="HeadersVisibility" Value="All"/>
-      <Setter Property="RowBackground" Value="#3d3d3d"/>
-      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+      <Setter Property="HeadersVisibility" Value="Column"/>
+      <Setter Property="RowBackground" Value="White"/>
+      <Setter Property="Foreground" Value="#333333"/>
       <Setter Property="FontSize" Value="13"/>
-      <Setter Property="CanUserReorderColumns" Value="True"/>
-      <Setter Property="CanUserResizeColumns" Value="True"/>
-      <Setter Property="CanUserSortColumns" Value="True"/>
+      <Setter Property="HorizontalGridLinesBrush" Value="#f0f0f0"/>
     </Style>
-    
+
+    <Style Selector="DataGridRow:nth-child(2n)">
+      <Setter Property="Background" Value="#fafafa"/>
+    </Style>
+
     <Style Selector="DataGridColumnHeader">
-      <Setter Property="Background" Value="#404040"/>
-      <Setter Property="Foreground" Value="White"/>
-      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="Background" Value="#f8f8f8"/>
+      <Setter Property="Foreground" Value="#555555"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
       <Setter Property="HorizontalContentAlignment" Value="Center"/>
-      <Setter Property="BorderBrush" Value="#555555"/>
-      <Setter Property="BorderThickness" Value="0,0,1,1"/>
-      <Setter Property="Padding" Value="8,4"/>
+      <Setter Property="BorderBrush" Value="#e0e0e0"/>
+      <Setter Property="BorderThickness" Value="0,0,0,1"/>
+      <Setter Property="Padding" Value="12,8"/>
     </Style>
-    
+
     <Style Selector="DataGridCell">
-      <Setter Property="BorderBrush" Value="#555555"/>
-      <Setter Property="BorderThickness" Value="0,0,1,0"/>
+      <Setter Property="BorderBrush" Value="#f0f0f0"/>
+      <Setter Property="BorderThickness" Value="0,0,0,1"/>
       <Setter Property="Background" Value="Transparent"/>
-      <Setter Property="Foreground" Value="White"/>
-      <Setter Property="Padding" Value="8,4"/>
+      <Setter Property="Foreground" Value="#333333"/>
+      <Setter Property="Padding" Value="12,8"/>
     </Style>
-    
-    <Style Selector="DataGridCell TextBlock">
-      <Setter Property="Foreground" Value="White"/>
-      <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    
+
     <Style Selector="DataGridRow:selected DataGridCell">
-      <Setter Property="Background" Value="#0078d4"/>
-      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Background" Value="#e3f2fd"/>
+      <Setter Property="Foreground" Value="#333333"/>
     </Style>
-    
-    <Style Selector="DataGridRow:selected DataGridCell TextBlock">
-      <Setter Property="Foreground" Value="White"/>
-    </Style>
-    
+
     <Style Selector="DataGridRow:pointerover DataGridCell">
-      <Setter Property="Background" Value="#404040"/>
+      <Setter Property="Background" Value="#f5f5f5"/>
     </Style>
-    
-    <Style Selector="DataGridRow:pointerover DataGridCell TextBlock">
-      <Setter Property="Foreground" Value="White"/>
+
+    <Style Selector="Border.notification">
+      <Setter Property="Background" Value="#e8f5e9"/>
+      <Setter Property="BorderBrush" Value="#c8e6c9"/>
+      <Setter Property="CornerRadius" Value="4"/>
+      <Setter Property="Padding" Value="12,8"/>
+      <Setter Property="Margin" Value="0,0,0,10"/>
     </Style>
   </UserControl.Styles>
-  
+
   <Grid Margin="20">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    
-    <!-- Header Section -->
-    <Border Grid.Row="0" 
-            Background="#333333" 
-            CornerRadius="8" 
-            Padding="16,12" 
+
+    <Border Grid.Row="0"
+            Background="#f0f4f8"
+            CornerRadius="8"
+            Padding="16,12"
             Margin="0,0,0,16">
-      <StackPanel Orientation="Horizontal">
-        <TextBlock Text="📦" 
-                   FontSize="24" 
-                   VerticalAlignment="Center" 
+      <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+        <TextBlock Text="📦"
+                   FontSize="24"
                    Margin="0,0,10,0"/>
-        <TextBlock Text="Product Inventory" 
-                   FontSize="24" 
-                   FontWeight="Bold" 
-                   Foreground="White" 
+        <TextBlock Text="Product Inventory"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="#2c3e50"
                    VerticalAlignment="Center"/>
       </StackPanel>
     </Border>
-    
-    <!-- DataGrid Section -->
-    <Border Grid.Row="1" 
-            Background="#2d2d2d" 
-            CornerRadius="8" 
-            Padding="2">
-      <DataGrid Name="ProductDataGrid"
-                ItemsSource="{Binding Products}"
-                AutoGenerateColumns="True"
-                IsReadOnly="True"
-                SelectionMode="Single"
-                Background="#2d2d2d"
-                Foreground="White"
-                FontSize="13"
-                GridLinesVisibility="All"
-                HeadersVisibility="All"
-                RowBackground="#3d3d3d"
-                BorderBrush="#404040"
-                BorderThickness="1">
-      </DataGrid>
-    </Border>
-    
-    <!-- Footer Section -->
-    <Border Grid.Row="2" 
-            Background="#333333" 
-            CornerRadius="8" 
-            Padding="16,8" 
+
+    <StackPanel Grid.Row="1" Spacing="10">
+
+      <TextBox Watermark="Search products..."
+               Text="{Binding SearchTerm, Mode=TwoWay}"
+               Background="White"
+               Foreground="#333333"
+               BorderBrush="#e0e0e0"
+               BorderThickness="1"
+               Padding="12,8"
+               CornerRadius="4">
+        <TextBox.Styles>
+          <Style Selector="TextBox">
+            <Setter Property="FontSize" Value="14"/>
+          </Style>
+        </TextBox.Styles>
+      </TextBox>
+
+      <Border Classes="notification"
+              IsVisible="{Binding IsNotificationVisible}">
+        <TextBlock Text="{Binding NotificationMessage}"
+                   Foreground="#2e7d32"
+                   FontWeight="Medium"/>
+      </Border>
+
+      <Grid ColumnDefinitions="*,*,*,*,*" ColumnSpacing="8">
+        <TextBox Grid.Column="0"
+                 Watermark="Name"
+                 Text="{Binding SelectedProduct.Name, Mode=TwoWay}"
+                 Background="White"
+                 Foreground="#333333"
+                 BorderBrush="#e0e0e0"
+                 CornerRadius="4"
+                 Padding="8"/>
+
+        <TextBox Grid.Column="1"
+                 Watermark="SKU"
+                 Text="{Binding SelectedProduct.Sku, Mode=TwoWay}"
+                 Background="White"
+                 Foreground="#333333"
+                 BorderBrush="#e0e0e0"
+                 CornerRadius="4"
+                 Padding="8"/>
+
+        <TextBox Grid.Column="2"
+                 Watermark="Barcode"
+                 Text="{Binding SelectedProduct.Barcode, Mode=TwoWay}"
+                 Background="White"
+                 Foreground="#333333"
+                 BorderBrush="#e0e0e0"
+                 CornerRadius="4"
+                 Padding="8"/>
+
+        <TextBox Grid.Column="3"
+                 Watermark="Qty"
+                 Text="{Binding SelectedProduct.Quantity, Mode=TwoWay}"
+                 Background="White"
+                 Foreground="#333333"
+                 BorderBrush="#e0e0e0"
+                 CornerRadius="4"
+                 Padding="8"/>
+
+        <TextBox Grid.Column="4"
+                 Watermark="Price"
+                 Text="{Binding SelectedProduct.Price, Mode=TwoWay}"
+                 Background="White"
+                 Foreground="#333333"
+                 BorderBrush="#e0e0e0"
+                 CornerRadius="4"
+                 Padding="8"/>
+      </Grid>
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="12">
+        <Button Content="🆕 New"
+                Command="{Binding NewCommand}"
+                Background="#f0f4f8"
+                Foreground="#2c3e50"
+                CornerRadius="4"
+                Padding="12,6"/>
+
+        <Button Content="➕ Add"
+                Command="{Binding AddCommand}"
+                Background="#e8f5e9"
+                Foreground="#2e7d32"
+                CornerRadius="4"
+                Padding="12,6"/>
+
+        <Button Content="✏️ Update"
+                Command="{Binding UpdateCommand}"
+                Background="#e3f2fd"
+                Foreground="#0d47a1"
+                CornerRadius="4"
+                Padding="12,6"/>
+
+        <Button Content="🗑️ Delete"
+                Command="{Binding DeleteCommand}"
+                Background="#ffebee"
+                Foreground="#c62828"
+                CornerRadius="4"
+                Padding="12,6"/>
+      </StackPanel>
+
+      <Border Background="White" CornerRadius="8" Padding="1" BorderBrush="#e0e0e0" BorderThickness="1">
+        <DataGrid Name="ProductDataGrid"
+                  ItemsSource="{Binding FilteredProducts}" AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+                  Background="White"
+                  Foreground="#333333"
+                  BorderBrush="#e0e0e0"
+                  GridLinesVisibility="Horizontal">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+            <DataGridTextColumn Header="SKU" Binding="{Binding Sku}" Width="120"/>
+            <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}" Width="150"/>
+            <DataGridTextColumn Header="Qty" Binding="{Binding Quantity}" Width="80"/>
+            <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0:C}'}" Width="100"/>
+          </DataGrid.Columns>
+        </DataGrid>
+      </Border>
+    </StackPanel>
+
+    <Border Grid.Row="2"
+            Background="#f0f4f8"
+            CornerRadius="8"
+            Padding="16,8"
             Margin="0,16,0,0">
       <Grid>
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"/>
           <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        
+
         <TextBlock Grid.Column="0"
-                   Text="{Binding Products.Count, StringFormat='Total Products: {0} items'}"
-                   Foreground="#B0B0B0"
+                   Text="{Binding TotalProductCount, StringFormat='Total Products: {0} items'}"
+                   Foreground="#7f8c8d"
                    FontSize="14"
                    VerticalAlignment="Center"/>
-        
-        <StackPanel Grid.Column="1" 
-                    Orientation="Horizontal" 
+
+        <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
                     Spacing="16">
-          <TextBlock Text="📊 Inventory Status"
-                     Foreground="#90EE90"
+          <TextBlock Text="📊 Inventory Status: Good"
+                     Foreground="#27ae60"
                      FontSize="12"
                      VerticalAlignment="Center"/>
-          <TextBlock Text="🔄 Last Updated: Now"
-                     Foreground="#B0B0B0"
+          <TextBlock Text="{Binding LastUpdateText}"
+                     Foreground="#7f8c8d"
                      FontSize="12"
                      VerticalAlignment="Center"/>
         </StackPanel>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yZOR7hWpOE0=",
+  "dgSpecHash": "wcyKc8lWDYY=",
   "success": true,
   "projectFilePath": "/home/gunin/Desktop/Project/Desktop Software/shoppro/shoppro.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "/home/gunin/.nuget/packages/avalonia.fonts.inter/11.3.2/avalonia.fonts.inter.11.3.2.nupkg.sha512",
     "/home/gunin/.nuget/packages/avalonia.freedesktop/11.3.2/avalonia.freedesktop.11.3.2.nupkg.sha512",
     "/home/gunin/.nuget/packages/avalonia.native/11.3.2/avalonia.native.11.3.2.nupkg.sha512",
+    "/home/gunin/.nuget/packages/avalonia.reactiveui/11.3.2/avalonia.reactiveui.11.3.2.nupkg.sha512",
     "/home/gunin/.nuget/packages/avalonia.remote.protocol/11.3.2/avalonia.remote.protocol.11.3.2.nupkg.sha512",
     "/home/gunin/.nuget/packages/avalonia.skia/11.3.2/avalonia.skia.11.3.2.nupkg.sha512",
     "/home/gunin/.nuget/packages/avalonia.themes.fluent/11.3.2/avalonia.themes.fluent.11.3.2.nupkg.sha512",

@@ -1,27 +1,26 @@
 ﻿using Avalonia;
 using System;
 using DotNetEnv;
+using ReactiveUI; // Ensure this is imported
+using Avalonia.ReactiveUI; // Ensure this is imported for UseReactiveUI
 
 namespace shoppro;
 
 sealed class Program
 {
-    // Initialization code. Don't use any Avalonia, third-party APIs or any
-    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-    // yet and stuff might break.
     [STAThread]
-    public static void Main(string[] args) {
-                // Load .env file before anything else
-        Env.Load();
+    public static void Main(string[] args)
+    {
+        Env.Load(); // Load .env file before anything else
 
         BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
     }
 
-    // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-            .LogToTrace();
+            .LogToTrace() // REMOVE THE SEMICOLON HERE!
+            .UseReactiveUI(); // This will now correctly be chained and executed
 }

@@ -233,6 +233,24 @@
           }
         }
       },
+      "Avalonia.ReactiveUI/11.3.2": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.3.2",
+          "ReactiveUI": "20.1.1",
+          "System.Reactive": "6.0.1"
+        },
+        "compile": {
+          "lib/net8.0/Avalonia.ReactiveUI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.ReactiveUI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia.Remote.Protocol/11.3.2": {
         "type": "package",
         "compile": {
@@ -3267,6 +3285,24 @@
         "lib/netstandard2.0/Avalonia.Native.dll",
         "lib/netstandard2.0/Avalonia.Native.xml",
         "runtimes/osx/native/libAvaloniaNative.dylib"
+      ]
+    },
+    "Avalonia.ReactiveUI/11.3.2": {
+      "sha512": "UbqzcqhCKN10jaRtCqb2Y/gV17lsRAnqwwwBiJWIoH1prPZq/PgbV/87h/KJsCkLLuTl1rqBU37vR84KLfjDhw==",
+      "type": "package",
+      "path": "avalonia.reactiveui/11.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.reactiveui.11.3.2.nupkg.sha512",
+        "avalonia.reactiveui.nuspec",
+        "lib/net6.0/Avalonia.ReactiveUI.dll",
+        "lib/net6.0/Avalonia.ReactiveUI.xml",
+        "lib/net8.0/Avalonia.ReactiveUI.dll",
+        "lib/net8.0/Avalonia.ReactiveUI.xml",
+        "lib/netstandard2.0/Avalonia.ReactiveUI.dll",
+        "lib/netstandard2.0/Avalonia.ReactiveUI.xml"
       ]
     },
     "Avalonia.Remote.Protocol/11.3.2": {
@@ -9183,6 +9219,7 @@
       "Avalonia.Desktop >= 11.3.2",
       "Avalonia.Diagnostics >= 11.3.2",
       "Avalonia.Fonts.Inter >= 11.3.2",
+      "Avalonia.ReactiveUi >= 11.3.2",
       "Avalonia.Themes.Fluent >= 11.3.2",
       "CommunityToolkit.Mvvm >= 8.2.1",
       "DotNetEnv >= 3.1.1",
@@ -9253,6 +9290,10 @@
             "version": "[11.3.2, )"
           },
           "Avalonia.Fonts.Inter": {
+            "target": "Package",
+            "version": "[11.3.2, )"
+          },
+          "Avalonia.ReactiveUi": {
             "target": "Package",
             "version": "[11.3.2, )"
           },

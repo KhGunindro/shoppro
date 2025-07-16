@@ -13,10 +13,17 @@ public class ProductService
 
     public void Add(Product product)
     {
+        if (product == null || string.IsNullOrWhiteSpace(product.Name))
+        {
+            Console.WriteLine("❌ Cannot add null or invalid product.");
+            return;
+        }
+
         using var db = new AppDbContext();
         db.Products.Add(product);
         db.SaveChanges();
     }
+
 
     public void Update(Product product)
     {

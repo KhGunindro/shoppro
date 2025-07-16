@@ -178,3 +178,4 @@
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.pdb
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.genruntimeconfig.cache
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/ref/shoppro.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.ReactiveUI.dll
