@@ -194,16 +194,16 @@
                   IsReadOnly="True"
                   SelectionMode="Single"
                   SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
-                  Background="White"
                   Foreground="#333333"
                   BorderBrush="#e0e0e0"
+                  Background="#38b6ffff"
                   GridLinesVisibility="Horizontal">
           <DataGrid.Columns>
-            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
-            <DataGridTextColumn Header="SKU" Binding="{Binding Sku}" Width="120"/>
-            <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}" Width="150"/>
-            <DataGridTextColumn Header="Qty" Binding="{Binding Quantity}" Width="80"/>
-            <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0:C}'}" Width="100"/>
+            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="2*"/>
+            <DataGridTextColumn Header="SKU" Binding="{Binding Sku}" Width="*"/>
+            <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}" Width="*"/>
+            <DataGridTextColumn Header="Qty" Binding="{Binding Quantity}" Width="*"/>
+            <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0:C}'}" Width="*"/>
           </DataGrid.Columns>
         </DataGrid>
       </Border>

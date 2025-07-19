@@ -14,4 +14,9 @@
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
         <StyleInclude Source="avares://shoppro/Assets/icons.axaml"/>
     </Application.Styles>
+    <Application.Resources>
+        <SolidColorBrush x:Key="DarkestBlue" Color="#4A628A"/>
+        <SolidColorBrush x:Key="DarkerBlue" Color="#7AB2D3"/>
+        <SolidColorBrush x:Key="LighterBlue" Color="#B9E5E8"/>
+        <SolidColorBrush x:Key="LightestBlue" Color="#DFF2EB"/>
 </Application>

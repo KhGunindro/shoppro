@@ -1,3 +1,5 @@
+/home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.csproj.AssemblyReference.cache
+/home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/Avalonia/Resources.Inputs.cache
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/shoppro
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/shoppro.deps.json
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/shoppro.runtimeconfig.json
@@ -21,6 +23,7 @@
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.Fonts.Inter.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.FreeDesktop.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.Native.dll
+/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.ReactiveUI.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.Remote.Protocol.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.Skia.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.Themes.Fluent.dll
@@ -164,8 +167,6 @@
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
 /home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
-/home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.csproj.AssemblyReference.cache
-/home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/Avalonia/Resources.Inputs.cache
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/Avalonia/resources
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.GeneratedMSBuildEditorConfig.editorconfig
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.AssemblyInfoInputs.cache
@@ -178,4 +179,3 @@
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.pdb
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/shoppro.genruntimeconfig.cache
 /home/gunin/Desktop/Project/Desktop Software/shoppro/obj/Debug/net9.0/ref/shoppro.dll
-/home/gunin/Desktop/Project/Desktop Software/shoppro/bin/Debug/net9.0/Avalonia.ReactiveUI.dll
