@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cvnmkbylKkc=",
+  "dgSpecHash": "TZ6YbA2E4Yo=",
   "success": true,
   "projectFilePath": "/home/gunin/Desktop/Project/Desktop Software/shoppro/shoppro.csproj",
   "expectedPackageFiles": [
@@ -159,15 +159,5 @@
     "/home/gunin/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/gunin/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "/home/gunin/Desktop/Project/Desktop Software/shoppro/shoppro.csproj",
-      "warningLevel": 1,
-      "filePath": "/home/gunin/Desktop/Project/Desktop Software/shoppro/shoppro.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
